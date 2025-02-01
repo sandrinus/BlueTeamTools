@@ -1,0 +1,104 @@
+# :: Stopping "easy wins" for red team - following https://orange-cyberdefense.github.io/ocd-mindmaps/img/pentest_ad_dark_2022_11.svg
+
+# :: MS08-068 (placeholder as it's for older systems)
+
+# :: Roasting of all varieties
+# :: ASREPRoast - Look for accounts with "Do not require kerberos authentication", limit perms for service accounts, detect by looking for event ID 4768 from service account
+# :: kerberoasting
+
+# :: CVE-2022-33679 - (placeholder b/c only mitigation I could find was patches, although there was a related regkey - AllowOldNt4Crypto)
+
+
+# :: Classic compromisation methods
+# :: MS17-010 - EternalBlue
+# :: (insert mitigation here)
+
+# :: MS14-025 - SYSVOL & GPP (placeholder b/c requires DC to be 2008 or 2012 and a patch - KB2962486) 
+# :: Don't set passwords via group policy ig
+
+# :: proxylogon, proxyshell (placeholder b/c no Exchange this year)
+
+
+# :: Mitigating some privesc methods
+
+# :: RoguePotato and literally all the other potatoes and PrintSpoofer
+# :: bruh idk how to mitigate this, something about restricting service account privileges (https://assets.sentinelone.com/labs/rise-of-potatoes#page=1)
+
+# :: KrbRelayUp - literally a no fix exploit smh my head
+# :: Mitigations located at https://pyrochiliarch.com/2022/04/28/krbrelayup-mitigations/
+# :: Mitigations could break scoring/injects or might not be possible
+
+
+# :: Trying to block common things done after getting valid creds
+# :: bloodhound - dude idk
+
+# :: kerberoasting - https://www.netwrix.com/cracking_kerberos_tgs_tickets_using_kerberoasting.html
+# :: Events 4769 and 4770, look for use of RC4 encryption and large volume of requests
+# :: Reject auth requests not using Kerberos FAST
+# :: Disable insecure protocols (not sure abt this) - attribute msDs-SupportedEncryptionTypes set to 0x18
+# :: Response: quarantine and reset passwords
+
+# :: certipy - bruh idk, requires ADCS anyways
+
+# :: coercer.py - oof idk but might not be effective given SMB security settings
+
+
+# :: Known vulns that require valid creds
+# :: MS14-068
+# :: (Mitigations go here)
+
+# :: CVE-2019-0724, CVE-2019-0686 (privexchange) - placeholder b/c requires MS Exchange
+
+# :: CVE-2022-26923 (Certifried) - placeholder b/c needs ADCS
+
+
+# :: Mitigating common things tried after getting local admin
+
+# :: dpapi extract - lol idk
+
+# :: Extract creds w/cert auth - placeholder b/c no ADCS, but still idk
+
+
+# :: Messing w/ACLs and permissions
+# :: dcsync
+
+# :: perms on groups, computers, users, gpos
+
+# :: CVE-2021-40469 - DNSadmins abuse
+# :: probs remove this from general script, specify in docs
+
+
+# :: Lateral movement attacks
+# :: Pass The Hash
+# :: https://www.netwrix.com/pass_the_hash_attack_explained.html
+
+# :: Pass The Ticket
+# :: https://www.netwrix.com/pass_the_ticket.html
+
+# :: overpass the hash
+# :: https://blog.netwrix.com/2022/10/04/overpass-the-hash-attacks/
+
+
+# :: Kerberos delegation
+# :: Unconstrained delegation
+
+# :: Contstrained delegation
+
+# :: Resource-based Constrained delegation (RBCD)
+
+
+# :: Trust relationships
+# :: Parent/child domain relations - https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/child-domain-da-to-ea-in-parent-domain?q=trust
+
+
+# :: Persistence
+# :: Golden Ticket - https://www.netwrix.com/how_golden_ticket_attack_works.html
+
+# :: Silver Ticket - https://www.netwrix.com/silver_ticket_attack_forged_service_tickets.html
+
+# :: Diamond Ticket??? Sapphire Ticket???
+
+# :: They got domain admin - rip bozo
+# :: ntds.dit extraction - https://www.netwrix.com/ntds_dit_security_active_directory.html
+
+# :: TODO: One secpol file for default domain controller policy (that contains user right assignments for DC's)
