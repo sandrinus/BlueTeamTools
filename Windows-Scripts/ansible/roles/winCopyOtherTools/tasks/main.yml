@@ -118,25 +118,6 @@
     dest: "{{ scripts_path }}\\scripts\\yara.bat"
     remote_src: false
 
-- name: Copy Windows Wazuh Config File
-  win_copy:
-    src: "{{ scripts_ansible_location }}/agent_windows.conf"
-    dest: "{{ scripts_path }}\\scripts\\conf\\agent_windows.conf"
-    remote_src: false
-
-- name: Copy Defender Exploit Guard Settings
-  win_copy:
-    src: "{{ scripts_ansible_location }}/def-eg-settings.xml"
-    dest: "{{ scripts_path }}\\scripts\\conf\\def-eg-settings.xml"
-    remote_src: false
-
-# Install Bitlocker and Defender
-
-- name: Install Bitlocker and Defender on Windows Server
-  win_shell: |
-    Install-WindowsFeature -Name Bitlocker,Windows-Defender
-  when: is_win_server == "true"
-
 # DC Tools
 
 # Group Policies
@@ -275,11 +256,6 @@
   win_copy:
     src: "{{ scripts_ansible_location }}/hh64.zip"
     dest: "{{ scripts_path }}\\hh64.zip"
-
-- name: Copy Wazuh Agent
-  win_copy:
-    src: "{{ scripts_ansible_location }}/wazuhagent.msi"
-    dest: "{{ scripts_path }}\\installers\\wazuhagent.msi"
 
 - name: Copy Sysmon Conf file
   win_copy:

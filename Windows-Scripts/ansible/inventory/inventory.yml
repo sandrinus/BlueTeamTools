@@ -11,7 +11,6 @@ all:
         ansible_password: "" #REPLACE
         scripts_path: "" #REPLACE
         scripts_ansible_location: "/Windows-Scripts"
-        wazuh_ip: "" #REPLACE
       # children:
       #   dc:
       #     vars:

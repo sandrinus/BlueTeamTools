@@ -1,9 +1,3 @@
-# Parameter for Wazuh Manager IP Address
-param(
-    [Parameter(Mandatory=$true)]
-    [string]$wazuhIP
-)
-
 # Variables for different paths
 [string]$currentFullPath = $MyInvocation.MyCommand.Path
 [string]$scriptDir = ($currentFullPath.substring(0, $currentFullPath.IndexOf("logging.ps1")))
