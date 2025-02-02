@@ -1,0 +1,68 @@
+---
+- name: "WIN - Copy Core Scripts"
+  hosts: windows
+  roles:
+    - winCopyCoreScripts
+  tags:
+    - windows
+    - copy
+    - never
+
+- name: "WIN - Run Downloads Script"
+  hosts: windows
+  roles:
+    - winDownload
+  tags:
+    - windowsOld
+    - download
+    - never
+
+- name: "WIN - Run Core Scripts"
+  hosts: windows
+  roles:
+    - winRunCoreScripts
+  tags:
+    - windows
+    - windowsOld
+    - backup
+    - firewall
+    - never
+
+- name: "WIN - Copy Scripts and Tools"
+  hosts: windows
+  roles:
+    - winCopyOtherTools
+  tags:
+    - windows
+    - copy
+    - never
+
+- name: "WIN - Logging"
+  hosts: windows
+  roles:
+    - winLogging
+  tags:
+    - windows
+    - windowsOld
+    - logging
+    - never
+
+- name: "WIN - Inventory"
+  hosts: windows
+  roles:
+    - winInventory
+  tags:
+    - windows
+    - windowsOld
+    - inventory
+    - never
+
+- name: "WIN - Audit"
+  hosts: windows
+  roles:
+    - winAudit
+  tags:
+    - windows
+    - windowsOld
+    - audit
+    - never

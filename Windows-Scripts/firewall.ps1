@@ -19,6 +19,8 @@ param(
     [Parameter(Mandatory=$false)]
     [array]$scoringIP2 = @("protocol","0.0.0.0"),
     [Parameter(Mandatory=$false)]
+    [bool]$runByAnsible = $false,
+    [Parameter(Mandatory=$false)]
     [array]$randomExtraPorts
 )
 

@@ -1,0 +1,44 @@
+- name: Create Script Directory
+  ansible.builtin.win_file:
+    path: "{{ scripts_path }}\\scripts"
+    state: directory
+
+- name: Copy Downloads Script
+  win_copy:
+    src: "{{ scripts_ansible_location }}/downloads.ps1"
+    dest: "{{ scripts_path }}\\downloads.ps1"
+    remote_src: false
+
+- name: Copy Firewall Script
+  win_copy:
+    src: "{{ scripts_ansible_location }}/firewall.ps1"
+    dest: "{{ scripts_path }}\\scripts\\firewall.ps1"
+    remote_src: false
+
+- name: Copy Backup Script
+  win_copy:
+    src: "{{ scripts_ansible_location }}/backup.ps1"
+    dest: "{{ scripts_path }}\\scripts\\backup.ps1"
+    remote_src: false
+
+# CA stuff now because of the firewall
+
+- name: Install NuGet on CA
+  win_shell: |
+    Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+  when: server_type == "ca"
+
+- name: Install PSRepository to PSGallery on CA
+  win_shell: |
+    Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
+  when: server_type == "ca"
+
+- name: Install Locksmith dependencies on CA
+  win_shell: |
+    Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-ADCS-Mgmt
+  when: server_type == "ca"
+
+- name: Install Locksmith on CA
+  win_shell: |
+    Install-Module -Name Locksmith -Scope CurrentUser
+  when: server_type == "ca"

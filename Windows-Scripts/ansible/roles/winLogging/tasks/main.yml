@@ -1,0 +1,5 @@
+- name: Run Script
+  win_shell: |
+    .\logging.ps1 -wazuhIP "{{ wazuh_ip }}"
+  args:
+    chdir: "{{ scripts_path }}\\scripts"

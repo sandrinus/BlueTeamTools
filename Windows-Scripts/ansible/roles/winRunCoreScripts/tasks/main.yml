@@ -1,0 +1,18 @@
+- name: Run Backup Script
+  win_shell: |
+    .\backup.ps1
+  args:
+    chdir: "{{ scripts_path }}\\scripts"
+  
+- name: Copy Backups to Ansible Controller
+  win_copy:
+    src: "{{ scripts_path }}\\backup"
+    dest: ~/windowsBackups
+    remote_src: true
+
+- name: Run Firewall Script
+  win_shell: |
+    .\firewall.ps1 -ExtraRules "httpio,{{ scored_services }}" -runByAnsible $true
+  args:
+    chdir: "{{ scripts_path }}\\scripts"
+
