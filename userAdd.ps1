@@ -2,6 +2,12 @@
 #4Logs
 $LogFile = "$PSScriptRoot\UserCreationLog.txt"
 
+$DC = $false
+if (Get-CimInstance -Class Win32_OperatingSystem -Filter 'ProductType = "2"') {
+    $DC = $true
+    Write-Host "[INFO] Domain Controller Detected"
+}
+
 # Function to write logs
 function Write-Log {
     param ([string]$Message)
@@ -13,13 +19,16 @@ function Write-Log {
 $SecurePassword = ConvertTo-SecureString "Change.me123!" -AsPlainText -Force
 
 # Define local users
-$LocalUsers = @("foreignaffairs", "intelofficer", "delegate", "advisor", "lobbyist", "aidworker", "general", "admiral", "judge", "bodyguard", "cabinetofficial", "treasurer")
+$LocalUsers = @("general", "admiral", "judge", "bodyguard", "cabinetofficial", "treasurer")
 
 # Define local administrators
 $LocalAdmins = @("president", "vicepresident", "defenseminister", "secretary")
 
-# Define domain users
-$DomainUsers = @("representative", "senator", "attache", "ambassador")
+#Define domain users
+$DomainUsers = @("foreignaffairs", "intelofficer", "delegate", "advisor", "lobbyist", "aidworker")
+
+# Define domain users admiins
+$DomainUsersAdmins = @("representative", "senator", "attache", "ambassador")
 
 # Define garbage users
 $GarbageUsers = @("redteam", "blahblah", "deleteme", "testuser", "randomaccount")
@@ -60,6 +69,18 @@ function CreateDomainUser {
     }
 }
 
+function CreateDomainAdmin {
+    param ($UserName)
+    if (-not (Get-ADUser -Filter {SamAccountName -eq $UserName} -ErrorAction SilentlyContinue)) {
+        New-ADUser -Name $UserName -SamAccountName $UserName -UserPrincipalName "$UserName@domain.local" -AccountPassword $SecurePassword -Enabled $true
+        Add-ADGroupMember -Identity "Domain Admins" -Members $UserName
+        Write-Log "Created domain admin user: $UserName"
+        Write-Output "Created domain admin user: $UserName"
+    } else {
+        Write-Output "Domain admin user $UserName already exists."
+    }
+}
+
 Write-Log "Starting user creation process..."
 
 foreach ($User in $LocalUsers) {
@@ -73,12 +94,15 @@ foreach ($Admin in $LocalAdmins) {
 foreach ($User in $DomainUsers) {
     CreateDomainUser -UserName $User
 }
+foreach ($User in $DomainUsersAdmins) {
+    CreateDomainAdmin -UserName $User
+}
 #garbage
 foreach ($User in $GarbageUsers) {
     CreateLocalUser -UserName $User
+    CreateDomainUser -UserName $User
 }
 
 
 Write-Log "User creation process completed."
-
 Write-Output "User creation script completed. Log saved at: $LogFile"
