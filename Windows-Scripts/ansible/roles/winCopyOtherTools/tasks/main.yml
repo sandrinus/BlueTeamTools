@@ -139,12 +139,6 @@
     dest: "{{ scripts_path }}\\scripts\\conf\\{6136C3E1-B316-4C46-9B8B-8C1FC373F73C}.zip"
   when: server_type == "dc"
 
-- name: Copy Group Policies to Domain Controller
-  win_copy:
-    src: "{{ scripts_ansible_location }}/{BEAA6460-782B-4351-B17D-4DC8076633C9}.zip"
-    dest: "{{ scripts_path }}\\scripts\\conf\\{BEAA6460-782B-4351-B17D-4DC8076633C9}.zip"
-  when: server_type == "dc"
-
 # Reset krbtgt script
 
 - name: Copy krbtgt reset script to Domain Controller
