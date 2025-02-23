@@ -187,12 +187,6 @@
     dest: "{{ scripts_path }}\\scripts\\conf"
   when: server_type == "dc"
 
-- name: Unzip Group Policy Object 4 on Domain Controller
-  community.windows.win_unzip:
-    src: "{{ scripts_path }}\\scripts\\conf\\{BEAA6460-782B-4351-B17D-4DC8076633C9}.zip"
-    dest: "{{ scripts_path }}\\scripts\\conf"
-  when: server_type == "dc"
-
 # Local Policy/Client tools
 
 - name: Copy Local GP Policy File to Non DC's
