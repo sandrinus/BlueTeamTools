@@ -12,7 +12,7 @@
 
 - name: Run Firewall Script
   win_shell: |
-    .\firewall.ps1 -ExtraRules "httpio,{{ scored_services }}" -runByAnsible $true
+    .\firewall.ps1 -ExtraRules httpio,{{ scored_services }} -runByAnsible $true
   args:
     chdir: "{{ scripts_path }}\\scripts"
 
