@@ -4,36 +4,35 @@
 # Downloading Scripts
 
 # Download script
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/downloads.ps1" -O "downloads.ps1"
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/downloads.ps1" -O "downloads.ps1"
 # Audit script
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/audit.ps1" -O "audit.ps1"
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/audit.ps1" -O "audit.ps1"
 # Audit policy file
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/auditpol.csv" -O "auditpol.csv"
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/auditpol.csv" -O "auditpol.csv"
 # Backups script
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/backup.ps1" -O "backup.ps1"
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/backup.ps1" -O "backup.ps1"
 # Command runbook
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/command_runbook.txt" -O "command_runbook.txt"
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/command_runbook.txt" -O "command_runbook.txt"
 # Firewall script
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/firewall.ps1" -O "firewall.ps1"
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/firewall.ps1" -O "firewall.ps1"
 # Inventory script
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/inventory.ps1" -O "inventory.ps1"
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/inventory.ps1" -O "inventory.ps1"
 # Logging script
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/logging.ps1" -O "logging.ps1"
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/logging.ps1" -O "logging.ps1"
 # Secure baseline script
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/secure.ps1" -O "secure.ps1"
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/secure.ps1" -O "secure.ps1"
 # Yara response script
 wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Logging-Scripts/main/yara.bat" -O "yara.bat"
 # User Management script
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/usermgmt.ps1" -O "usermgmt.ps1"
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/usermgmt.ps1" -O "usermgmt.ps1"
 # SOAR Agent Script
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/SOARAgent.ps1" -O "soaragent.ps1"
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/SOARAgent.ps1" -O "soaragent.ps1"
 
-# Service tooling 
-# DC Tooling
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/gpos/%7BEE3B9E95-9783-474A-86A5-907E93E64F57%7D.zip" -O "{EE3B9E95-9783-474A-86A5-907E93E64F57}.zip"
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/gpos/%7B40E1EAFA-8121-4FFA-B6FE-BC348636AB83%7D.zip" -O "{40E1EAFA-8121-4FFA-B6FE-BC348636AB83}.zip"
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/gpos/%7B6136C3E1-B316-4C46-9B8B-8C1FC373F73C%7D.zip" -O "{6136C3E1-B316-4C46-9B8B-8C1FC373F73C}.zip"
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/gpos/%7BBEAA6460-782B-4351-B17D-4DC8076633C9%7D.zip" -O "{BEAA6460-782B-4351-B17D-4DC8076633C9}.zip"
+Service tooling 
+DC Tooling
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/gpos/%7BEE3B9E95-9783-474A-86A5-907E93E64F57%7D.zip" -O "{EE3B9E95-9783-474A-86A5-907E93E64F57}.zip"
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/gpos/%7B40E1EAFA-8121-4FFA-B6FE-BC348636AB83%7D.zip" -O "{40E1EAFA-8121-4FFA-B6FE-BC348636AB83}.zip"
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/gpos/%7B6136C3E1-B316-4C46-9B8B-8C1FC373F73C%7D.zip" -O "{6136C3E1-B316-4C46-9B8B-8C1FC373F73C}.zip"
 
 # Reset-KrbtgtKeyInteractive script
 wget -o /dev/null "https://gist.githubusercontent.com/mubix/fd0c89ec021f70023695/raw/02e3f0df13aa86da41f1587ad798ad3c5e7b3711/Reset-KrbtgtKeyInteractive.ps1" -O "Reset-KrbtgtKeyInteractive.ps1"
@@ -43,7 +42,7 @@ wget -o /dev/null "https://github.com/netwrix/pingcastle/releases/download/3.3.0
 wget -o /dev/null "https://github.com/lkarlslund/Adalanche/releases/download/v2024.1.11/adalanche-windows-x64-v2024.1.11.exe" -O "adalanche.exe"
 # Member server/client tools
 # Local policy file
-wget -o /dev/null "https://raw.githubusercontent.com/CCDC-RIT/Windows-Scripts/master/gpos/localpolicy.PolicyRules" -O "localpolicy.PolicyRules"
+wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/gpos/localpolicy.PolicyRules" -O "localpolicy.PolicyRules"
 # LGPO tool
 wget -o /dev/null "https://download.microsoft.com/download/8/5/C/85C25433-A1B0-4FFA-9429-7E023E7DA8D8/LGPO.zip" -O "lg.zip"
 # LGPO extraction
@@ -65,8 +64,6 @@ wget -o /dev/null "https://aka.ms/vs/17/release/vc_redist.x64.exe" -O "vc_redist
 
 # hollows hunter
 wget -o /dev/null "https://github.com/hasherezade/hollows_hunter/releases/download/v0.3.9/hollows_hunter64.zip" -O "hh64.zip"
-# Wazuh agent
-wget -o /dev/null "https://packages.wazuh.com/4.x/windows/wazuh-agent-4.9.2-1.msi" -O "wazuhagent.msi"
 # Basic Sysmon conf file
 wget -o /dev/null "https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml" -O "sysmon.xml"
 # Windows Firewall Control + .NET 4.8
