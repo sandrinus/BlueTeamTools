@@ -28,8 +28,8 @@ wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/ref
 # SOAR Agent Script
 wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/SOARAgent.ps1" -O "soaragent.ps1"
 
-Service tooling 
-DC Tooling
+# Service tooling 
+# DC Tooling
 wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/gpos/%7BEE3B9E95-9783-474A-86A5-907E93E64F57%7D.zip" -O "{EE3B9E95-9783-474A-86A5-907E93E64F57}.zip"
 wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/gpos/%7B40E1EAFA-8121-4FFA-B6FE-BC348636AB83%7D.zip" -O "{40E1EAFA-8121-4FFA-B6FE-BC348636AB83}.zip"
 wget -o /dev/null "https://raw.githubusercontent.com/sandrinus/BlueTeamTools/refs/heads/main/Windows-Scripts/gpos/%7B6136C3E1-B316-4C46-9B8B-8C1FC373F73C%7D.zip" -O "{6136C3E1-B316-4C46-9B8B-8C1FC373F73C}.zip"
