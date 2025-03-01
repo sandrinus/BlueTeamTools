@@ -44,3 +44,5 @@ all:
             is_server_core: "false"
           hosts:
             10.14.1.3:
+              ansible_user: ""
+              ansible_password: ""
